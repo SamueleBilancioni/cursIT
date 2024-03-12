@@ -1,0 +1,419 @@
+/* general */
+
+:root{
+    --black:rgb(0, 0, 0);
+    --white:#ffffff;
+    --grey:rgb(85,85,85);
+    --bone:rgb(225, 223, 221);
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background-color:var(--bone);
+}
+
+p{
+    color:var(--grey)
+}
+
+/* desktop-nav */
+
+nav, .nav-links{
+    display:flex;
+}
+
+nav{
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+}
+
+.nav-links{
+    gap:2rem;
+    list-style:none;
+}
+
+/*a{
+    color:var(--black);
+    text-decoration: none;
+    text-decoration-color: #ffffff;
+}
+
+a:hover{
+    color:var(--grey);
+    text-decoration: underline;
+    text-underline-offset: 0.25rem;
+    text-decoration-color:rgb(181,181,181);
+}*/
+
+/* nav-bar hover animation */
+
+a{
+    position: relative;
+    color: #000;
+    text-decoration: none;
+}
+  
+a:hover{
+    color: #000;
+}
+  
+a::before{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    transform: scaleX(0);
+    transform-origin: top left;
+    transition: transform 0.5s ease;
+}
+  
+a:hover::before{
+    transform: scaleX(1);
+}
+
+.logo{
+    color:var(--black);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.logo:hover{
+    cursor:default;
+}
+
+/* hamburger-menu */
+
+#hamburger-nav{
+    display:none;
+}
+
+.hamburger-menu{
+    position:relative;
+    display:inline-block;
+}
+
+.hamburger-icon{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    height:24px;
+    width: 30px;
+}
+
+.hamburger-icon span{
+    width:100%;
+    height:2px;
+    background-color:var(--black);
+    transition:all 0.5 ease-in-out;
+}
+
+.menu-links{
+    position: absolute;
+    top:100%;
+    right:0%;
+    background-color:var(--bone);
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition:all 0.5 ease-in-out;
+}
+
+.menu-links a{
+    display:block;
+    padding:10px;
+    text-align: center;
+    font-size:1.5rem;
+    color: var(--black);
+    text-decoration:none;
+    transition:all 0.5 ease-in-out;
+}
+
+.menu-links li{
+    list-style: none;
+}
+
+.menu-links.open{
+    max-height: 300px;
+}
+
+.hamburger-icon.open span:first-child{
+    transform: rotate(45deg) translate(10px,5px);
+}
+
+.hamburger-icon.open span:nth-child(2){
+    opacity:0;
+}
+
+.hamburger-icon.open span:last-child{
+    transform: rotate(-45deg) translate(10px,-5px);
+}
+
+.hamburger-icon span:first-child{
+    transform: none;
+}
+
+.hamburger-icon span:first-child{
+    opacity:1;
+}
+
+.hamburger-icon span:first-child{
+    transform: none;
+}
+
+/* sections */
+
+section{
+    padding-top: 4vh;
+    height: 96vh;
+    margin:0 10rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+}
+
+.section-container{
+    display: flex;
+}
+
+/* profile section */
+
+#profile{
+    display: flex;
+    justify-content: center;
+    gap:5rem;
+    height: 80vh;
+}
+
+.section-image-container{
+    display: flex;
+    height: 600px;
+    width: 400px;
+    margin:auto 0;
+}
+
+.section-text{
+    align-self: center;
+    text-align: center;
+}
+
+.section-p1{
+    text-align: left;
+    font-weight: light;
+    font-style:italic;
+}
+
+.hero-title{
+    font-size: 3rem;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.section-p2{
+    font-size:1rem;
+    margin-bottom: 1rem;
+    text-align: right;
+    /*font-weight:600;*/
+    font-style:italic;
+}
+
+.title{
+    font-size: 3rem;
+    color: rgb(0, 0, 0);
+    text-align: end;
+    margin-top: 3rem;
+}
+
+#socials-container{
+    display:flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap:1rem;
+}
+
+/* icons */
+
+.icon{
+    cursor:pointer;
+    height:2rem;
+}
+
+/* buttons styling */
+
+.button-container{
+    display: flex;
+    justify-content: center;
+    gap:1rem;
+    margin-top: 3rem;
+}
+
+button{
+    border: none;
+    cursor: pointer;
+    padding: 20px 30px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    transition: transform 200ms;
+    background: transparent;
+    color: #000000;
+    box-shadow: 0 0 0 3px var(--black) inset;
+}
+
+button:hover{
+        transform: translateY(-2px);
+    }
+
+.about-p1{
+    text-decoration: underline;
+    text-align: center;
+}
+
+/* about section */
+
+#about{
+    position:relative;
+}
+
+.about-containers{
+    display:flex;
+    gap:2rem;
+    margin-bottom:2rem;
+    margin-top:2rem;
+}
+
+.about-details-container{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.arrow{
+    position: absolute;
+    right:1rem;
+    bottom:7.5rem;
+}
+
+.a-details-container{
+    padding:1.5rem;
+    flex:1;
+    border:rgb(53,53,53) 3px solid;
+    border-color:var(--black);
+    text-align: center;
+}
+
+.details-container{
+    padding:1.5rem;
+    flex:1;
+    text-align: center;
+}
+
+.section-container{
+    gap:4rem;
+    height:80%;
+}
+
+.section-image-container{
+    margin:0 0;
+}
+
+.about-picture{
+    margin-top: 2rem;
+}
+
+.about-text1{
+    font-size: 18px;
+}
+
+/* projects section*/
+
+.projects-title{
+    font-size: 3rem;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    margin-top:3rem;
+}
+
+#projects{
+    position:relative;
+}
+
+.project-image{
+    width:70%;
+    height: 70%;
+}
+
+.project-title{
+    margin:1rem;
+    color:var(--black)
+}
+
+/* contact page */
+
+#contact{
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+}
+
+.contact-title{
+    font-size: 3rem;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.contact-info-upper-container{
+    display:flex;
+    justify-content: center;
+    border:rgb(53,53,53) 3px solid;
+    margin:2rem auto;
+    padding:0.5rem;
+}
+
+.contact-info-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:0.5rem;
+    margin:1rem;
+}
+
+.contact-info-container p{
+    font-size:larger;
+}
+
+.contact-icon{
+    cursor:default;
+}
+
+.email-icon{
+    height: 2.5rem;
+}
+
+/* footer section */
+
+.footer{
+    height:25vh;
+    margin:0 1rem;
+}
+
+footer p{
+    text-align: center;
+}
+
+
+
+
